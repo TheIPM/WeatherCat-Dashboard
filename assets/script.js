@@ -12,13 +12,13 @@ weatherForm.addEventListener('submit', function(event) {
 function getWeather(location) {
     var apiKey = '16962282faecdfd494ff4b8f615e26b8';
     var url = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
-  
+    document.getElementById('forecast-container').innerHTML = '';
     fetch(url)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
-      var forecastData = data.list;
+      var forecastData = data.list
       var filteredData = forecastData.filter(function(forecast) {
         var date = new Date(forecast.dt * 1000);
         var hours = date.getUTCHours();
