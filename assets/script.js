@@ -18,7 +18,12 @@ function getWeather(location) {
         return response.json();
       })
       .then(function(data) {
-        // Use the data to update the UI
         console.log(data);
+        var temperature = data.list[0].main.temp; // temperature in kelvin
+        var temperatureInCelsius = temperature - 273.15;
+        var temperatureElement = document.getElementById('temperature');
+        temperatureElement.innerHTML = temperatureInCelsius + 'C';
       });
+      
   }
+
