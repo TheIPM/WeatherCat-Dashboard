@@ -1,0 +1,6 @@
+.weahterBox {
+border-radius: 30px;
+background: #37a08b;
+box-shadow:  -35px 35px 70px #2f8876,
+             35px -35px 70px #3fb8a0;
+}
