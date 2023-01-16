@@ -1,7 +1,7 @@
 var weatherForm = document.getElementById('weather-form');
 
 weatherForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // prevent the form from submitting
+  event.preventDefault();
 
   var locationInput = document.getElementById('location-input');
   var location = locationInput.value;
@@ -32,7 +32,7 @@ function getWeather(location) {
           var humidity = forecast.main.humidity;
           if (currentDay !== day && hours === 12) {
               currentDay = day;
-              var temperature = forecast.main.temp - 273.15;
+              var temperature = (forecast.main.temp - 273.15).toFixed(1);
               var weatherDescription = forecast.weather[0].description;
               var weatherIcon = forecast.weather[0].icon;
               // Create new HTML element to display the forecast
