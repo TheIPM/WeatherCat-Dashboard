@@ -1,9 +1,9 @@
 body {
-    background-color: rgb(82, 78, 78);
+    background-color: rgb(147, 158, 168);
 }
 
 
-.weahterBox {
+.weatherBox {
 border-radius: 30px;
 background: #37a08b;
 box-shadow:  -35px 35px 70px #2f8876,
