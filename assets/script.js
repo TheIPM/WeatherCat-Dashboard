@@ -49,6 +49,7 @@ function getWeather(location) {
               document.getElementById('forecast-container').appendChild(forecastContainer);
           }
       }
+      updateSearchHistory();
     });
 }
 
@@ -61,17 +62,14 @@ function updateSearchHistory() {
     locationLink.href = '#';
     locationLink.innerText = location;
 
-    // Anonymous function to capture the correct location value
-    (function(loc) {
+    (function(seahisloc) {
       locationLink.addEventListener('click', function() {
-        getWeather(loc);
+        getWeather(seahisloc);
       });
     })(location);
 
     searchHistoryContainer.appendChild(locationLink);
+    
   }
 }
 
-window.onload = function() {
-  updateSearchHistory();
-};
