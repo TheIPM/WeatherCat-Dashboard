@@ -38,12 +38,12 @@ function getWeather(location) {
               // NEW HTML TO DISPLAY 
               var forecastContainer = document.createElement('div');
               forecastContainer.innerHTML = `
-                  <div class="forecast-date">${day}</div>
+                  <div>${day}</div>
                   <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">
-                  <div class="forecast-temp">${temperature}C</div>
-                  <div class="forecast-wind-speed">Wind Speed: ${windSpeed}</div>
-                  <div class="forecast-humidity">Humidity: ${humidity}%</div>
-                  <div class="forecast-desc">${weatherDescription}</div>
+                  <div>${temperature}C</div>
+                  <div>Wind Speed: ${windSpeed}</div>
+                  <div>Humidity: ${humidity}%</div>
+                  <div>${weatherDescription}</div>
               `;
               // Append it to foreest container 
               document.getElementById('forecast-container').appendChild(forecastContainer);
@@ -73,3 +73,6 @@ function updateSearchHistory() {
   }
 }
 
+window.onload = function() {
+  updateSearchHistory();
+};
