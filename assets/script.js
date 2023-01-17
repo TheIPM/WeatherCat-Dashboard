@@ -5,7 +5,7 @@ weatherForm.addEventListener('submit', function(event) {
 
   var locationInput = document.getElementById('location-input');
   var location = locationInput.value;
-
+  localStorage.setItem(location, location);
   getWeather(location);
 });
 
@@ -35,7 +35,7 @@ function getWeather(location) {
               var temperature = (forecast.main.temp - 273.15).toFixed(1);
               var weatherDescription = forecast.weather[0].description;
               var weatherIcon = forecast.weather[0].icon;
-              // Create new HTML element to display the forecast
+              // NEW HTML TO DISPLAY 
               var forecastContainer = document.createElement('div');
               forecastContainer.innerHTML = `
                   <div class="forecast-date">${day}</div>
@@ -45,9 +45,33 @@ function getWeather(location) {
                   <div class="forecast-humidity">Humidity: ${humidity}%</div>
                   <div class="forecast-desc">${weatherDescription}</div>
               `;
-              // Append the new element to the forecast container
+              // Append it to foreest container 
               document.getElementById('forecast-container').appendChild(forecastContainer);
           }
       }
     });
 }
+
+function updateSearchHistory() {
+  var searchHistoryContainer = document.getElementById('search-history-container');
+  searchHistoryContainer.innerHTML = '';
+  for (var i = 0; i < localStorage.length; i++) {
+    var location = localStorage.key(i);
+    var locationLink = document.createElement('a');
+    locationLink.href = '#';
+    locationLink.innerText = location;
+
+    // Anonymous function to capture the correct location value
+    (function(loc) {
+      locationLink.addEventListener('click', function() {
+        getWeather(loc);
+      });
+    })(location);
+
+    searchHistoryContainer.appendChild(locationLink);
+  }
+}
+
+window.onload = function() {
+  updateSearchHistory();
+};
