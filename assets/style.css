@@ -1,11 +1,131 @@
+.header {
+    background-color: #0c2340;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
 body {
     background-color: rgb(147, 158, 168);
 }
 
+#weather-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+}
 
-.weatherBox {
-border-radius: 30px;
-background: #37a08b;
+#temperature {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 40px;
+}
+
+#forecast-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forecast-container div {
+    padding: 10px;
+  }
+
+.forecast-data {
+    text-align: center;
+    margin: 40px;
+}
+
+.forecast-date {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.forecast-temp {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.forecast-wind-speed {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.forecast-humidity {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.forecast-desc {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+#search-history-container {
+    position: absolute;
+    top: 153px;
+    left: 11px;
+    z-index: 5;
+    border-radius: 10px;
+background: #dce0e0;
 box-shadow:  -35px 35px 70px #2f8876,
              35px -35px 70px #3fb8a0;
-}
+
+    
+  }
+
+  li {
+    list-style: none;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  a:hover {
+    color: #0079c1;
+  }
+
+#clear{
+  position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 135px;
+    height: 60px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: -35px 35px 70px #0e1c9b,
+    35px -35px 70px #0a4491;
+    }
+  
+    button::before {  
+        transform: scaleX(0);
+        transform-origin: bottom right;
+      }
+      
+      button:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+      
+      button::before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        inset: 0 0 0 0;
+        background: hsl(200 100% 80%);
+        z-index: -1;
+        transition: transform .3s ease;
+      }
+      
+      
+      @media (orientation: landscape) {
+        body {
+          grid-auto-flow: column;
+        }
+      }

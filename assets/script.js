@@ -58,21 +58,27 @@ function updateSearchHistory() {
   searchHistoryContainer.innerHTML = '';
   for (var i = 0; i < localStorage.length; i++) {
     var location = localStorage.key(i);
+    var locationItem = document.createElement('li');
     var locationLink = document.createElement('a');
     locationLink.href = '#';
     locationLink.innerText = location;
-
+  
     (function(seahisloc) {
       locationLink.addEventListener('click', function() {
         getWeather(seahisloc);
       });
     })(location);
-
-    searchHistoryContainer.appendChild(locationLink);
-    
-  }
-}
+  
+    locationItem.appendChild(locationLink);
+    searchHistoryContainer.appendChild(locationItem);
+  }}
+  
 
 window.onload = function() {
   updateSearchHistory();
 };
+
+document.getElementById("clear").addEventListener("click", function() {
+  localStorage.clear();
+  updateSearchHistory();
+});
