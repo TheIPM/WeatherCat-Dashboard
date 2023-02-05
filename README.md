@@ -5,6 +5,8 @@
 
 This is the fifth weekly challenge for the my boot camp. This challenge involved creating a weather dashboard which draws data from an API, in this case Open Weathermap. You can search any city in the world and get the weather forecast for the next 5 days (including the day you are using it). There are 2 cats on the screen modelled after my own cats, so if you like cats you will love this!
 
+link to pages - https://theipm.github.io/WeatherCat-Dashboard/
+
 
 ## Table of Contents 
 
