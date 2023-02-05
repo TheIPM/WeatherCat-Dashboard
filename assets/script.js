@@ -5,7 +5,7 @@ weatherForm.addEventListener('submit', function(event) {
 
   var locationInput = document.getElementById('location-input');
   var location = locationInput.value;
-  localStorage.setItem(location, location);
+  localStorage.setItem('weather_app_' + location, location);
   getWeather(location);
 });
 
@@ -58,21 +58,24 @@ function updateSearchHistory() {
   searchHistoryContainer.innerHTML = '';
   for (var i = 0; i < localStorage.length; i++) {
     var location = localStorage.key(i);
-    var locationItem = document.createElement('li');
-    var locationLink = document.createElement('a');
-    locationLink.href = '#';
-    locationLink.innerText = location;
+    if (location.startsWith('weather_app_')) {
+      var actualLocation = location.replace('weather_app_', '');
+      var locationItem = document.createElement('li');
+      var locationLink = document.createElement('a');
+      locationLink.href = '#';
+      locationLink.innerText = actualLocation;
   
-    (function(seahisloc) {
-      locationLink.addEventListener('click', function() {
-        getWeather(seahisloc);
-      });
-    })(location);
+      (function(seahisloc) {
+        locationLink.addEventListener('click', function() {
+          getWeather(seahisloc);
+        });
+      })(actualLocation);
   
-    locationItem.appendChild(locationLink);
-    searchHistoryContainer.appendChild(locationItem);
-  }}
-  
+      locationItem.appendChild(locationLink);
+      searchHistoryContainer.appendChild(locationItem);
+    }
+  }
+}
 
 window.onload = function() {
   updateSearchHistory();
