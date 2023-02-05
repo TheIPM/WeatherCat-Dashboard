@@ -1,12 +1,15 @@
 .header {
-    background-color: #0c2340;
+    background-color: #2c2a2a;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 
 body {
-    background-color: rgb(147, 158, 168);
+    background-color: rgb(56, 45, 44);
+        font-family: 'Poppins', sans-serif;
+        font-size: larger;
+        color: aliceblue;
 }
 
 #weather-form {
@@ -96,8 +99,7 @@ background: #dce0e0;
     height: 60px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: -35px 35px 70px #0e1c9b,
-    35px -35px 70px #0a4491;
+    font-weight: bolder;
     }
   
     button::before {  
@@ -116,7 +118,7 @@ background: #dce0e0;
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         inset: 0 0 0 0;
-        background: hsl(200 100% 80%);
+        background: rgb(78, 4, 121);
         z-index: -1;
         transition: transform .3s ease;
       }
@@ -129,9 +131,11 @@ background: #dce0e0;
       }
       
       .cat {
-        position: relative;
+        position: absolute;
         height: 170px;
         width: 192.1px;
+        top: 67px;
+        right: 34px;
    }
     .ear {
         position: absolute;
@@ -299,4 +303,36 @@ background: #dce0e0;
         transform: translateX(-50%);
         border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
    }
-    
+
+.cat2{
+    border: 1px solid white;
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.kiki {
+   background-color: #fff;
+   height: 65px;
+   width: 80px;
+   border-radius: 0 80px 80px 0;
+   position: absolute;
+   bottom: 60px;
+   right: 50px;
+
+}
+
+.kikiEar {
+ height: 15px;
+ width: 15px; 
+ background-color: #fff;
+ position: absolute;  
+ bottom: 64px;
+ left: 8px;
+ border-radius: 20px 0 0 0;
+ box-shadow: 25px 0 #fff;
+
+}
