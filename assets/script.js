@@ -85,3 +85,17 @@ document.getElementById("clear").addEventListener("click", function() {
   localStorage.clear();
   updateSearchHistory();
 });
+
+
+function getDayOfWeek(dayNum) {
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  if (dayNum >= 1 && dayNum <= 7) {
+    return daysOfWeek[dayNum - 1];
+  } else {
+    return 'Undefined';
+  }
+}
+
+console.log(getDayOfWeek(1)); // Output: Monday
+console.log(getDayOfWeek(5)); // Output: Friday
+console.log(getDayOfWeek(8)); // Output: Undefined
