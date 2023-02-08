@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', function(event) {
 
 function getWeather(location) {
   var apiKey = '16962282faecdfd494ff4b8f615e26b8';
-  var url = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
+  var url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}`;
 
   fetch(url)
     .then(function(response) {
@@ -39,7 +39,7 @@ function getWeather(location) {
               var forecastContainer = document.createElement('div');
               forecastContainer.innerHTML = `
                   <div>${day}</div>
-                  <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">
+                  <img src="https://openweathermap.org/img/w/${weatherIcon}.png" alt="Weather Icon">
                   <div>${temperature}C</div>
                   <div>Wind Speed: ${windSpeed}</div>
                   <div>Humidity: ${humidity}%</div>
